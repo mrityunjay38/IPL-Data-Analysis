@@ -1,5 +1,5 @@
 function fetchAndVisualizeData() {
-    fetch('./data.json')
+    fetch('./data1.json')
     .then(r => r.json())
     .then(data => {
       console.log([Object.keys(data)]);
@@ -52,7 +52,6 @@ Highcharts.chart('container', {
 
   series: [
       {
-        names: "Matches played per season",
         data : Object.values(data)
           
       }

@@ -26,23 +26,23 @@ csv()
 
                 // fs.writeFileSync('./public/data1.json', JSON.stringify(matchesPlayedPerYear(jsonObjMatches), null, 2));
 
-                // //solved - Problem-2
+                // // //solved - Problem-2
 
-                // let matchesWonPerTeamPerYear = require('./ipl/matchesWonPerTeamPerYear');
+                // // let matchesWonPerTeamPerYear = require('./ipl/matchesWonPerTeamPerYear');
 
-                // console.log(matchesWonPerTeamPerYear(jsonObjMatches));
+                // // console.log(matchesWonPerTeamPerYear(jsonObjMatches));
 
-                // fs.writeFileSync('./public/data2.json', JSON.stringify(matchesWonPerTeamPerYear(jsonObjMatches), null, 2),{flags: 'as+'});
+                // // fs.writeFileSync('./public/data2.json', JSON.stringify(matchesWonPerTeamPerYear(jsonObjMatches), null, 2),{flags: 'as+'});
 
-                // //solved - Problem-3
+                // // //solved - Problem-3
 
                 let extraRunsConceded2016 = require('./ipl/extraRunsConceded2016');
 
-                console.log(extraRunsConceded2016(jsonObjMatches));
+                // console.log(extraRunsConceded2016(jsonObjMatches,jsonObjDelivery));
 
                 fs.writeFileSync('./public/data3.json', JSON.stringify(extraRunsConceded2016(jsonObjMatches,jsonObjDelivery), null, 2),{flags: 'as+'});
 
-
+                
     })
 })
  
