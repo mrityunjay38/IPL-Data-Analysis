@@ -1,40 +1,33 @@
 function matchesWonPerTeamPerYear(matches) {
 
-    let result = matches.reduce( (acc,currIndex) => {
+    let result  = matches.reduce( (acc,currIndex) => {
 
-        const season = currIndex["season"];
+        let season = currIndex["season"];
+        let winner = currIndex["winner"];
+
+        if(winner == '')
+           return acc;
+
 
         if(typeof acc[season] == 'undefined'){
-            acc[season] = [matches.map(year => year.winner).reduce( (acc,count) => {
-                    
-                
-                     acc[count] = 0;
-                
+            
+            acc[season] = {};
 
-                return acc;
-            },{} )];
+            acc[season][winner] = 1;
+
         }
         else {
-            
-            let result1 = acc[season].reduce( (team,count) => {
 
-                if(typeof team[count] == 'undefined'){
-                    team[count] = 1;
-                }
-                else{
-                    team[count] += 1;
-                }
-
-                return team;
-
-            },{} );
-            
-            // acc[season].push(result1);
+            if(typeof acc[season][winner] == 'undefined'){
+                acc[season][winner] = 1;
+            }
+            else{
+                acc[season][winner] += 1;
+            }
 
         }
 
         return acc;
-        
 
     },{} );
 
