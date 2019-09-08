@@ -7,6 +7,7 @@ function fetchAndVisualizeData() {
 }
 
 
+
 function visualizeData(data) {
 
 
