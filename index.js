@@ -18,19 +18,29 @@ csv()
 
                 // console.log(jsonObjMatches);
               
-                //solved
+                //solved - Problem-1
 
-                let matchesPlayedPerYear = require('./ipl/matchesPlayedPerYear');
+                // let matchesPlayedPerYear = require('./ipl/matchesPlayedPerYear');
                 
-                console.log(matchesPlayedPerYear(jsonObjMatches));
+                // console.log(matchesPlayedPerYear(jsonObjMatches));
 
-                fs.writeFileSync('./public/data.json', JSON.stringify(matchesPlayedPerYear(jsonObjMatches)));
+                // fs.writeFileSync('./public/data1.json', JSON.stringify(matchesPlayedPerYear(jsonObjMatches), null, 2));
 
-                let matchesWonPerTeamPerYear = require('./ipl/matchesWonPerTeamPerYear');
+                // //solved - Problem-2
 
-                console.log(matchesWonPerTeamPerYear(jsonObjMatches));
+                // let matchesWonPerTeamPerYear = require('./ipl/matchesWonPerTeamPerYear');
 
-                fs.writeFileSync('./public/data.json', JSON.stringify(matchesWonPerTeamPerYear(jsonObjMatches)),{flags: 'as+'});
+                // console.log(matchesWonPerTeamPerYear(jsonObjMatches));
+
+                // fs.writeFileSync('./public/data2.json', JSON.stringify(matchesWonPerTeamPerYear(jsonObjMatches), null, 2),{flags: 'as+'});
+
+                // //solved - Problem-3
+
+                let extraRunsConceded2016 = require('./ipl/extraRunsConceded2016');
+
+                console.log(extraRunsConceded2016(jsonObjMatches));
+
+                fs.writeFileSync('./public/data3.json', JSON.stringify(extraRunsConceded2016(jsonObjMatches,jsonObjDelivery), null, 2),{flags: 'as+'});
 
 
     })
