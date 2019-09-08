@@ -2,8 +2,6 @@ function fetchAndVisualizeData() {
     fetch('./data.json')
     .then(r => r.json())
     .then(data => {
-      console.log([Object.keys(data)]);
-      console.log(Object.values(data));
         visualizeData(data);
     })
 }

@@ -50,9 +50,9 @@ let expectedOutput =
     
 
 describe("matches won by each team per year.", () => {
-//   it("should return empty object for empty input", () => {
-//     expect(matchesPlayedPerYear([])).toEqual({});
-//   });
+  it("should return empty object for empty input", () => {
+    expect(matchesWonPerTeamPerYear([])).toEqual({});
+  });
   it("should return object matches won per team per year.", () => {
     expect(matchesWonPerTeamPerYear(inputData)).toEqual(expectedOutput);
   });
