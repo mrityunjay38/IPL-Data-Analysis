@@ -1,5 +1,5 @@
 function fetchAndVisualizeData() {
-    fetch('./data1.json')
+    fetch('./data3.json')
     .then(r => r.json())
     .then(data => {
       console.log([Object.keys(data)]);
@@ -18,17 +18,17 @@ Highcharts.chart('container', {
       type: 'column',
   },
   title: {
-      text: 'Matches played per year'
+      text: 'Extra runs conceded by each team in 2016'
   },
   xAxis: {
     categories: Object.keys(data),
     title: {
-      text: 'Years'
+      text: 'Teams'
   }
   },
   yAxis: {
       title: {
-          text: 'Matches played'
+          text: 'Extra runs'
       }
 
   },
@@ -40,14 +40,14 @@ Highcharts.chart('container', {
           borderWidth: 0,
           dataLabels: {
               enabled: true,
-              format: '{point.y:.1f}%'
+              format: '{point.y:.1f}'
           }
       }
   },
 
   tooltip: {
       headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
-      pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+      pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}</b> of total<br/>'
   },
 
   series: [
