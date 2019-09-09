@@ -18,22 +18,6 @@ csv()
 
                 // console.log(jsonObjMatches);
               
-                //solved - Problem-1
-
-                // let matchesPlayedPerYear = require('./ipl/matchesPlayedPerYear');
-                
-                // console.log(matchesPlayedPerYear(jsonObjMatches));
-
-                // fs.writeFileSync('./public/data1.json', JSON.stringify(matchesPlayedPerYear(jsonObjMatches), null, 2));
-
-                // // //solved - Problem-2
-
-                // // let matchesWonPerTeamPerYear = require('./ipl/matchesWonPerTeamPerYear');
-
-                // // console.log(matchesWonPerTeamPerYear(jsonObjMatches));
-
-                // // fs.writeFileSync('./public/data2.json', JSON.stringify(matchesWonPerTeamPerYear(jsonObjMatches), null, 2),{flags: 'as+'});
-
                 // // //solved - Problem-3
 
                 let extraRunsConceded2016 = require('./ipl/extraRunsConceded2016');
