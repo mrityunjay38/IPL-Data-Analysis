@@ -36,11 +36,11 @@ csv()
 
                 // // //solved - Problem-3
 
-                let extraRunsConceded2016 = require('./ipl/extraRunsConceded2016');
+                // let extraRunsConceded2016 = require('./ipl/extraRunsConceded2016');
 
-                // console.log(extraRunsConceded2016(jsonObjMatches,jsonObjDelivery));
+                // // console.log(extraRunsConceded2016(jsonObjMatches,jsonObjDelivery));
 
-                fs.writeFileSync('./public/data3.json', JSON.stringify(extraRunsConceded2016(jsonObjMatches,jsonObjDelivery), null, 2),{flags: 'as+'});
+                // fs.writeFileSync('./public/data3.json', JSON.stringify(extraRunsConceded2016(jsonObjMatches,jsonObjDelivery), null, 2),{flags: 'as+'});
 
                 
     })
