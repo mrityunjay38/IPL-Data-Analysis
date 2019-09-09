@@ -2,6 +2,8 @@ function fetchAndVisualizeData() {
     fetch('./data2.json')
     .then(r => r.json())
     .then(data => {
+        console.log(Object.keys(data));
+        console.log(Object.values(data));
         visualizeData(data);
     })
 }
@@ -17,7 +19,7 @@ function visualizeData(data) {
             text: 'Stacked column chart'
         },
         xAxis: {
-            categories: Object.keys(data)
+            categories: data[0]
         },
         yAxis: {
             min: 0,
@@ -39,7 +41,7 @@ function visualizeData(data) {
             align: 'right',
             x: -30,
             verticalAlign: 'top',
-            y: 25,
+            y: -15,
             floating: true,
             backgroundColor:
                 Highcharts.defaultOptions.legend.backgroundColor || 'white',
@@ -59,16 +61,7 @@ function visualizeData(data) {
                 }
             }
         },
-        series: [{
-            name: 'John',
-            data: [5, 3, 4, 7, 2]
-        }, {
-            name: 'Jane',
-            data: [2, 2, 3, 2, 1]
-        }, {
-            name: 'Joe',
-            data: [3, 4, 4, 2, 5]
-        }]
+        series: data
     });
 
 }

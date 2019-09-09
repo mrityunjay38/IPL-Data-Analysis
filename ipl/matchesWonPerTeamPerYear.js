@@ -14,7 +14,7 @@ function matchesWonPerTeamPerYear(matches) {
             acc[season] = {};
 
             acc[season][winner] = 1;
-
+            
         }
         else {
 
@@ -31,8 +31,49 @@ function matchesWonPerTeamPerYear(matches) {
 
     },{} );
 
-    return result;
-     
+    let obj = {};
+    let counter = 0;
+    let years = [];
+
+
+    Object.entries(result).forEach(([key,val]) => {
+        years.push(key);
+        counter++;
+
+        Object.entries(val).forEach( ([team,wins])  => {
+            //  console.log(team);
+            
+            if(typeof obj[team] == 'undefined'){
+                obj[team] = [];
+                for(var i=1;i<counter;i++)
+                obj[team].push(0);
+                obj[team].push(wins);
+            }
+            else{
+                obj[team].push(wins);
+            }
+
+        });
+
+
+    });
+
+    // console.log(obj);
+
+    let newJSON = [];
+    newJSON.push(years);
+    
+    Object.entries(obj).forEach( ([team,wins]) => {
+        let newObj = {};
+        newObj['name'] = team;
+        newObj['data'] = wins;
+        newJSON.push(newObj);
+    } );
+
+    // console.log(newJSON);
+return newJSON;
+
+    //  return result;
  }
  
  
