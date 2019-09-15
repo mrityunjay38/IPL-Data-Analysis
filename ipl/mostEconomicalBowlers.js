@@ -39,7 +39,7 @@ function mostEconomicalBowlers(matches,deliveries) {
 
 
   let calcEconomy = Object.entries(result).reduce((acc,index) => {
-    acc[index[0]] = ((index[1].runs / index[1].balls)*6).toFixed(2);
+    acc[index[0]] = Number(((index[1].runs / index[1].balls)*6).toFixed(2));
     return acc;
   },{});
 
