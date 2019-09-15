@@ -1,7 +1,9 @@
 function fetchAndVisualizeData() {
-    fetch('./data1.json')
+    fetch('./data4.json')
     .then(r => r.json())
     .then(data => {
+        console.log(Object.keys(data));
+        console.log(Object.values(data));
         visualizeData(data);
     })
 }
@@ -12,7 +14,7 @@ function visualizeData(data) {
 
 
   // Create the chart
-Highcharts.chart('container', {
+Highcharts.chart('container4', {
   chart: {
       type: 'column',
   },

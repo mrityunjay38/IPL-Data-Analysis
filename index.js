@@ -22,7 +22,7 @@ csv()
 
                 let mostEconomicalBowlers = require('./ipl/mostEconomicalBowlers');
 
-                console.log(mostEconomicalBowlers(jsonObjMatches,jsonObjDelivery));
+                // console.log(mostEconomicalBowlers(jsonObjMatches,jsonObjDelivery));
 
                 fs.writeFileSync('./public/data4.json', JSON.stringify(mostEconomicalBowlers(jsonObjMatches,jsonObjDelivery), null, 2),{flags: 'as+'});
 
