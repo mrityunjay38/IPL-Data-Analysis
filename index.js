@@ -21,9 +21,13 @@ csv()
                 //solved - Problem-1
 
                 
-                let top10Batsman2016 = require('./ipl/top10Batsman2016');
+                // let top10Batsman2016 = require('./ipl/top10Batsman2016');
 
-                fs.writeFileSync('./public/data5.json', JSON.stringify(top10Batsman2016(jsonObjMatches,jsonObjDelivery), null, 2));
+                // fs.writeFileSync('./public/data5.json', JSON.stringify(top10Batsman2016(jsonObjMatches,jsonObjDelivery), null, 2));
+
+                let top10BowlersByWicket = require('./ipl/top10BowlersByWicket');
+
+                fs.writeFileSync('./public/data6.json', JSON.stringify(top10BowlersByWicket(jsonObjMatches,jsonObjDelivery), null, 2));
 
                 
     })
