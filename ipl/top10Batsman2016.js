@@ -1,6 +1,17 @@
 function top10Batsman2016(matches,deliveries){
 
-    let result = deliveries.reduce( (acc,match) => {
+    let filterById = matches.filter(match => match.season == 2016)
+                          .map(match => match.id);
+
+    let filterbyMatch =[];
+
+    filterById.forEach(id => {
+    filterbyMatch.push(deliveries.filter(match =>  match.match_id == id));
+    });
+
+  filterbyMatch = filterbyMatch.flat(Infinity);
+
+    let result = filterbyMatch.reduce( (acc,match) => {
 
         if(match.batsman in acc){
             acc[match.batsman] += Number(match.batsman_runs);
@@ -21,5 +32,3 @@ function top10Batsman2016(matches,deliveries){
 }
 
 module.exports = top10Batsman2016;
-
-// Number(match.batsman_runs) + Number(match.noball_runs) + Number(match.legbye_runs) + Number(match.bye_runs);
