@@ -51,9 +51,15 @@ function top10BowlersByWicket(matches,deliveries){
 
     },{} );
 
+    let topBowlers = Object.entries(result).flat(Infinity);
 
-    return Object.entries(result).flat(Infinity);
-    // return result;
+    let top10Bowlers = {};
+
+    for(let i=0;i<topBowlers.length;i+=2){
+        top10Bowlers[topBowlers[i]] = Object.fromEntries(Object.entries(topBowlers[i+1]).sort( (a,b) => b[1] - a[1] ).slice(0,10)); 
+    }
+
+  return top10Bowlers;
 
 }
 
